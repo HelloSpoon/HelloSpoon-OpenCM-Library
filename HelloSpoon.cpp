@@ -129,31 +129,31 @@ byte HelloSpoon::LED(byte id, char led_color[]){
 	int val = 0;
 	byte res;
 
-	if(led_color[0] == 'r' && led_color[1] == 'e' && led_color[2] == 'd'){
+	if(led_color[0] == 'r'){
 		val = 1;
 	}
 
-	else if(led_color[0] == 'g' && led_color[1] == 'r' && led_color[2] == 'e'){
+	else if(led_color[0] == 'g'){
 		val = 2;
 	}
 
-	else if(led_color[0] == 'y' && led_color[1] == 'e' && led_color[2] == 'l'){
+	else if(led_color[0] == 'y'){
 		val = 3;
 	}
 
-	else if(led_color[0] == 'b' && led_color[1] == 'l' && led_color[2] == 'u'){
+	else if(led_color[0] == 'b'){
 		val = 4;
 	}
 
-	else if(led_color[0] == 'p' && led_color[1] == 'i' && led_color[2] == 'n'){
+	else if(led_color[0] == 'p'){
 		val = 5;
 	}
 
-	else if(led_color[0] == 'c' && led_color[1] == 'y' && led_color[2] == 'a'){
+	else if(led_color[0] == 'c'){
 		val = 6;
 	}
 
-	else if(led_color[0] == 'w' && led_color[1] == 'h' && led_color[2] == 'i'){
+	else if(led_color[0] == 'w'){
 		val = 7;
 	}
 

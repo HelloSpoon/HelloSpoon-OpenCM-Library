@@ -77,9 +77,14 @@ class HelloSpoon{
 	virtual ~HelloSpoon();	
 
 	void begin();
+	void deactivateTrunk();
+	void activateTrunk();
+	void TorqueON(byte id);
+	void TorqueOFF(byte id);
 
 	byte moveServo(byte id, word value);
 	byte setServoSpeed(byte id, word value);
+	byte setServoTorque(byte id, word value);
 	byte LED(byte id, char led_color[]);
 
 	word getSpoonLoad();

@@ -88,6 +88,9 @@ class HelloSpoon{
 	byte LED(byte id, char led_color[]);
 
 	word getSpoonLoad();
+	word getServoPosition();
+	word getServoSpeed();
+	word getServoTemp();
 };
 
 #endif

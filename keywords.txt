@@ -1,0 +1,13 @@
+# Syntax Coloring Map for HelloSpoon Library
+
+# Datatypes (KEYWORD1)
+
+HelloSpoon        	KEYWORD1
+
+# Methods and Functions (KEYWORD2)
+
+begin           	KEYWORD2
+LED					KEYWORD2
+moveServo			KEYWORD2
+setServoSpeed		KEYWORD2
+getSpoonLoad		KEYWORD2

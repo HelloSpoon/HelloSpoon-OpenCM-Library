@@ -91,6 +91,7 @@ class HelloSpoon{
 	word getServoPosition(byte id);
 	word getServoSpeed(byte id);
 	word getServoTemp(byte id);
+	word isServoMoving(byte id);
 };
 
 #endif

@@ -78,6 +78,66 @@ void HelloSpoon::begin(){
 	}
 }
 
+void HelloSpoon::deactivateTrunk(){
+	for(int i = 1; i<6; i++){
+		writeWord(i, 24, 0);
+		writeWord(i, 25, 1);
+	}
+}
+
+void HelloSpoon::activateTrunk(){
+	for(int i = 1; i<6; i++){
+		writeWord(i, 24, 0);
+		writeWord(i, 25, 4);
+	}
+}
+
+byte HelloSpoon::TorqueON(byte id){
+	byte res;
+	
+	if(id == 1){
+		res = writeWord(id, 24, 1);
+	}
+
+	else if(id == 2){
+		res = writeWord(id, 24, 1);
+		res = writeWord(id + 1, 24, 1);
+	}
+
+	else if (id == 3){
+		res = writeWord(id + 1, 24, 1);
+	}
+
+	else if (id == 4){
+		res = writeWord(id + 1, 24, 1);
+	}
+	
+	return res;
+}
+
+byte HelloSpoon::TorqueOFF(byte id){
+	byte res;
+	
+	if(id == 1){
+		res = writeWord(id, 24, 0);
+	}
+
+	else if(id == 2){
+		res = writeWord(id, 24, 0);
+		res = writeWord(id + 1, 24, 0);
+	}
+
+	else if (id == 3){
+		res = writeWord(id + 1, 24, 0);
+	}
+
+	else if (id == 4){
+		res = writeWord(id + 1, 24, 0);
+	}
+	
+	return res;
+}
+
 byte HelloSpoon::moveServo(byte id, word value){
 
 	byte res;
@@ -110,7 +170,7 @@ byte HelloSpoon::setServoSpeed(byte id, word value){
 	}
 
 	else if(id == 2){
-		res = writeWord(id, 30, value);
+		res = writeWord(id, 32, value);
 		res = writeWord(id + 1, 32, value);
 	}
 
@@ -120,6 +180,29 @@ byte HelloSpoon::setServoSpeed(byte id, word value){
 
 	else if (id == 4){
 		res = writeWord(id + 1, 32, value);
+	}
+
+	return res;
+}
+
+byte HelloSpoon::setServoTorque(byte id, word value){
+	byte res;
+
+	if(id == 1){
+		res = writeWord(id, 35, value);
+	}
+
+	else if(id == 2){
+		res = writeWord(id, 35, value);
+		res = writeWord(id + 1, 35, value);
+	}
+
+	else if (id == 3){
+		res = writeWord(id + 1, 35, value);
+	}
+
+	else if (id == 4){
+		res = writeWord(id + 1, 35, value);
 	}
 
 	return res;

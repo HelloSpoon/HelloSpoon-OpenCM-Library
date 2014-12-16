@@ -266,6 +266,30 @@ word HelloSpoon::getSpoonLoad(){
 	return load;
 }
 
+word HelloSpoon::getServoPosition(byte id){
+	word dat;
+	dat = readWord(id, 37);
+	return dat;
+}
+
+word HelloSpoon::getServoSpeed(byte id){
+	word dat;
+	dat = readWord(id, 39);
+	return dat;
+}
+
+word HelloSpoon::getServoTemp(byte id){
+	word dat;
+	dat = readWord(id, 46);
+	return dat;
+}
+
+word HelloSpoon::isServoMoving(byte id){
+	word dat;
+	dat = readWord(id, 49);
+	return dat;
+}
+
 word readWord(byte bID, int wAddress){
 	mResult = 0;
 

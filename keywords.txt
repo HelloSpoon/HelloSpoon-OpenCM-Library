@@ -2,12 +2,23 @@
 
 # Datatypes (KEYWORD1)
 
-HelloSpoon        	KEYWORD1
+HelloSpoon        KEYWORD1
 
 # Methods and Functions (KEYWORD2)
 
 begin           	KEYWORD2
-LED					KEYWORD2
-moveServo			KEYWORD2
-setServoSpeed		KEYWORD2
-getSpoonLoad		KEYWORD2
+deactivateTrunk   KEYWORD2
+activateTrunk     KEYWORD2
+
+LED					      KEYWORD2
+moveJoint		    	KEYWORD2
+setJointSpeed		  KEYWORD2
+setJointTorque    KEYWORD2
+torqueON          KEYWORD2
+torqueOFF         KEYWORD2
+
+getSpoonLoad		  KEYWORD2
+getJointPosition  KEYWORD2
+getJointSpeed     KEYWORD2
+getJointTemp      KEYWORD2
+isJointMoving     KEYWORD2

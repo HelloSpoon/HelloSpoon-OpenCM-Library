@@ -80,18 +80,18 @@ class HelloSpoon{
 	void deactivateTrunk();
 	void activateTrunk();
 	
-	byte TorqueON(byte id);
-	byte TorqueOFF(byte id);
-	byte moveServo(byte id, word value);
-	byte setServoSpeed(byte id, word value);
-	byte setServoTorque(byte id, word value);
+	byte torqueON(byte id);
+	byte torqueOFF(byte id);
+	byte moveJoint(byte id, word value);
+	byte setJointSpeed(byte id, word value);
+	byte setJointTorque(byte id, word value);
 	byte LED(byte id, char led_color[]);
 
 	word getSpoonLoad();
-	word getServoPosition(byte id);
-	word getServoSpeed(byte id);
-	word getServoTemp(byte id);
-	word isServoMoving(byte id);
+	word getJointPosition(byte id);
+	word getJointSpeed(byte id);
+	word getJointTemp(byte id);
+	word isJointMoving(byte id);
 };
 
 #endif

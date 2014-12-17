@@ -11,6 +11,9 @@
 
  This file can be used and be modified by anyone, 
  don't forget to say thank you to OP!
+ 
+ Take a look to the Wiki if you want to learn more:
+ https://github.com/HelloSpoon/HelloSpoon_OpenCMLib/wiki
  */
 
 #ifndef HELLOSPOON_H_

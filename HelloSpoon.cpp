@@ -92,7 +92,7 @@ void HelloSpoon::activateTrunk(){
 	}
 }
 
-byte HelloSpoon::TorqueON(byte id){
+byte HelloSpoon::torqueON(byte id){
 	byte res;
 	
 	if(id == 1){
@@ -115,7 +115,7 @@ byte HelloSpoon::TorqueON(byte id){
 	return res;
 }
 
-byte HelloSpoon::TorqueOFF(byte id){
+byte HelloSpoon::torqueOFF(byte id){
 	byte res;
 	
 	if(id == 1){
@@ -138,7 +138,7 @@ byte HelloSpoon::TorqueOFF(byte id){
 	return res;
 }
 
-byte HelloSpoon::moveServo(byte id, word value){
+byte HelloSpoon::moveJoint(byte id, word value){
 
 	byte res;
 
@@ -162,7 +162,7 @@ byte HelloSpoon::moveServo(byte id, word value){
 	return res;
 }
 
-byte HelloSpoon::setServoSpeed(byte id, word value){
+byte HelloSpoon::setJointSpeed(byte id, word value){
 	byte res;
 
 	if(id == 1){
@@ -185,7 +185,7 @@ byte HelloSpoon::setServoSpeed(byte id, word value){
 	return res;
 }
 
-byte HelloSpoon::setServoTorque(byte id, word value){
+byte HelloSpoon::setJointTorque(byte id, word value){
 	byte res;
 
 	if(id == 1){
@@ -266,25 +266,25 @@ word HelloSpoon::getSpoonLoad(){
 	return load;
 }
 
-word HelloSpoon::getServoPosition(byte id){
+word HelloSpoon::getJointPosition(byte id){
 	word dat;
 	dat = readWord(id, 37);
 	return dat;
 }
 
-word HelloSpoon::getServoSpeed(byte id){
+word HelloSpoon::getJointSpeed(byte id){
 	word dat;
 	dat = readWord(id, 39);
 	return dat;
 }
 
-word HelloSpoon::getServoTemp(byte id){
+word HelloSpoon::getJointTemp(byte id){
 	word dat;
 	dat = readWord(id, 46);
 	return dat;
 }
 
-word HelloSpoon::isServoMoving(byte id){
+word HelloSpoon::isJointMoving(byte id){
 	word dat;
 	dat = readWord(id, 49);
 	return dat;

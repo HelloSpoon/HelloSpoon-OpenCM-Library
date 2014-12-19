@@ -32,6 +32,20 @@ HelloSpoon::~HelloSpoon() {
 	// TODO Auto-generated destructor stub
 }
 
+/*
+begin()
+Starts the communication between OpenCM and XL-320 actuators using protocol 2.0
+This method is mandatory everytime you want to control HelloSpoon's robotic trunk.
+
+Usage:
+void setup(){
+	robot.begin();
+	// Continue with your code...
+}
+void loop(){
+}
+*/
+
 void HelloSpoon::begin(){
 	int i=0;
 	uint32 Baudrate = 0;
@@ -78,6 +92,22 @@ void HelloSpoon::begin(){
 	}
 }
 
+/*
+deactivateTrunk()
+
+Turn off the torque of the complete robotic trunk, so the user can manipulate it.
+LEDs turn RED.
+
+Usage:
+void setup(){
+	robot.begin();
+	robot.deactivateTrunk();
+	// Continue with your code...
+}
+void loop(){
+}
+*/
+
 void HelloSpoon::deactivateTrunk(){
 	for(int i = 1; i<6; i++){
 		writeWord(i, 24, 0);
@@ -85,12 +115,46 @@ void HelloSpoon::deactivateTrunk(){
 	}
 }
 
+/*
+activateTrunk()
+
+Turn on the torque of the complete robotic trunk of HelloSpoon.
+LEDs turn BLUE.
+
+Usage:
+void setup(){
+	robot.begin();
+	robot.activateTrunk();
+	// Continue with your code...
+}
+void loop(){
+}
+*/
+
 void HelloSpoon::activateTrunk(){
 	for(int i = 1; i<6; i++){
-		writeWord(i, 24, 0);
+		writeWord(i, 24, 1);
 		writeWord(i, 25, 4);
 	}
 }
+
+/*
+torqueON(byte id)
+
+Thanks to this method you can manually turn ON the torque of the desired joint.
+
+@params:
+id - 1:4
+
+Usage:
+void setup(){
+	robot.begin();
+	robot.torqueON(2);
+	// Continue with your code...
+}
+void loop(){
+}
+*/
 
 byte HelloSpoon::torqueON(byte id){
 	byte res;
@@ -115,6 +179,24 @@ byte HelloSpoon::torqueON(byte id){
 	return res;
 }
 
+/*
+torqueOFF(byte id)
+
+Thanks to this method you can manually turn OFF the torque of the desired joint.
+
+@params:
+id - 1:4
+
+Usage:
+void setup(){
+	robot.begin();
+	robot.torqueOFF(2);
+	// Continue with your code...
+}
+void loop(){
+}
+*/
+
 byte HelloSpoon::torqueOFF(byte id){
 	byte res;
 	
@@ -137,6 +219,25 @@ byte HelloSpoon::torqueOFF(byte id){
 	
 	return res;
 }
+
+/*
+moveJoint(byte id, word value)
+
+This method is used to move each joint of the robotic trunk manually from 0 to 300 degrees.
+
+@params:
+id - 1:4
+value - 0:1024
+
+Usage:
+void setup(){
+	robot.begin();
+	robot.moveJoint(2, 550);
+	// Continue with your code...
+}
+void loop(){
+}
+*/
 
 byte HelloSpoon::moveJoint(byte id, word value){
 
@@ -162,6 +263,26 @@ byte HelloSpoon::moveJoint(byte id, word value){
 	return res;
 }
 
+/*
+setJointSpeed()
+
+This method is used to manually set the speed for each joint in HelloSpoon's robotic trunk.
+
+@params:
+id - 1:4
+value - 0:1024
+
+Usage:
+void setup(){
+	robot.begin();
+	robot.setJointSpeed(2, 100);
+	// Continue with your code...
+}
+
+void loop(){
+}
+*/
+
 byte HelloSpoon::setJointSpeed(byte id, word value){
 	byte res;
 
@@ -185,6 +306,26 @@ byte HelloSpoon::setJointSpeed(byte id, word value){
 	return res;
 }
 
+/*
+setJointTorque()
+
+This method is used to manually set the torque that's going to be used by each joint in HelloSpoon's robotic trunk.
+
+@params:
+id - 1:4
+value - 0:1024
+
+Usage:
+void setup(){
+	robot.begin();
+	robot.setJointTorque(2, 512);
+	// Continue with your code...
+}
+
+void loop(){
+}
+*/
+
 byte HelloSpoon::setJointTorque(byte id, word value){
 	byte res;
 
@@ -207,6 +348,26 @@ byte HelloSpoon::setJointTorque(byte id, word value){
 
 	return res;
 }
+
+/*
+LED(byte id, char led_color[])
+
+This method is used to manually set the color displayed by each joint's LED.
+
+@params:
+id - 1:4
+led_color - "red", "green", "blue", "yellow", "pink", "cyan", "white"
+
+Usage:
+void setup(){
+	robot.begin();
+	robot.LED(1, "cyan");
+	// Continue with your code...
+}
+
+void loop(){
+}
+*/
 
 byte HelloSpoon::LED(byte id, char led_color[]){
 	int val = 0;
@@ -260,11 +421,48 @@ byte HelloSpoon::LED(byte id, char led_color[]){
 	return res;
 }
 
+/*
+getSpoonLoad()
+
+This method is used to measure the load in the spoon joint.
+
+Usage:
+void setup(){
+	robot.begin();	
+}
+
+void loop(){
+	if(robot.getSpoonLoad()>100){
+		robot.LED(4, "yellow");
+	}
+}
+*/
+
 word HelloSpoon::getSpoonLoad(){
 	word load;
 	load = readWord(5, 41);
 	return load;
 }
+
+/*
+getJointPosition()
+
+This method is used to get the actual position of the requested joint.
+
+@params:
+id - 1:4
+
+Usage:
+void setup(){
+	robot.begin();
+	SerialUSB.begin();
+}
+
+void loop(){
+	SerialUSB.println(robot.getJointPosition(3));
+	delay(1000);
+}
+*/
 
 word HelloSpoon::getJointPosition(byte id){
 	word dat;
@@ -272,17 +470,81 @@ word HelloSpoon::getJointPosition(byte id){
 	return dat;
 }
 
+/*
+getJointSpeed()
+
+This method is used to get the actual speed of the requested joint.
+
+@params:
+id - 1:4
+
+Usage:
+void setup(){
+	robot.begin();
+	SerialUSB.begin();
+}
+
+void loop(){
+	SerialUSB.println(robot.getJointSpeed(3));
+	delay(1000);
+}
+*/
+
 word HelloSpoon::getJointSpeed(byte id){
 	word dat;
 	dat = readWord(id, 39);
 	return dat;
 }
 
+/*
+getJointTemp()
+
+This method is used to get the actual temperature (Celsius) of the requested joint.
+
+@params:
+id - 1:4
+
+Usage:
+void setup(){
+	robot.begin();
+	SerialUSB.begin();
+}
+
+void loop(){
+	SerialUSB.println(robot.getJointTemp(3));
+	delay(1000);
+}
+*/
+
 word HelloSpoon::getJointTemp(byte id){
 	word dat;
 	dat = readWord(id, 46);
 	return dat;
 }
+
+/*
+isJointMoving(byte id)
+
+This method is used to know if the requested joint is still moving.
+
+@params:
+id - 1:4
+
+Usage:
+void setup(){
+	robot.begin();
+	robot.moveJoint(1, 870);
+}
+
+void loop(){
+	if(isJointMoving(1)){
+		robot.LED(1, "green");
+	}
+	else{
+		robot.LED(1, "red");
+	}
+}
+*/
 
 word HelloSpoon::isJointMoving(byte id){
 	word dat;

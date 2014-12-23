@@ -15,4 +15,4 @@ Windows version: http://t.co/GWCj6vvjI9 (Tested on Windows 7)
 
 Mac OS X version: http://t.co/CGJXqpOKBI (Tested on Snow Leopard)
 
-Linux 64-bit version: 
+Linux 64-bit version: http://goo.gl/L0oEml (Tested on Debian with JDK 7.0)

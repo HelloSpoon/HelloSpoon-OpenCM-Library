@@ -400,6 +400,10 @@ byte HelloSpoon::LED(byte id, char led_color[]){
 	else if(led_color[0] == 'w'){
 		val = 7;
 	}
+	
+	else if(led_color[0] == 'o'){
+		val = 0;
+	}
 
 	if(id == 1){
 		res = writeWord(id, 25, val);

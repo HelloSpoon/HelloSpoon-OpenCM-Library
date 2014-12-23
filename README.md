@@ -9,7 +9,7 @@ If you are a CM9 IDE user you can add this library to your library folder and st
 If you are not a CM9 IDE user we recommend you to download HelloSpoon IDE!
 It includes HelloSpoon library and a few examples to help you to understand how HelloSpoon works.
 
-We are improving HelloSpoon IDE with new examples and methods.
+We are improving HelloSpoon IDE with new examples and methods (the ones added in this library).
 
 Windows version: http://t.co/GWCj6vvjI9 (Tested on Windows 7)
 

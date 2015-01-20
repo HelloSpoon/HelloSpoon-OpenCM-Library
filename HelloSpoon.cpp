@@ -470,7 +470,23 @@ void loop(){
 
 word HelloSpoon::getJointPosition(byte id){
 	word dat;
-	dat = readWord(id, 37);
+	
+	if(id == 1){
+		dat = readWord(id, 37);
+	}
+
+	else if(id == 2){
+		dat = readWord(id, 37);
+	}
+
+	else if (id == 3){
+		dat = readWord(id + 1, 37);
+	}
+
+	else if (id == 4){
+		dat = readWord(id + 1, 37);
+	}
+
 	return dat;
 }
 
@@ -496,7 +512,22 @@ void loop(){
 
 word HelloSpoon::getJointSpeed(byte id){
 	word dat;
-	dat = readWord(id, 39);
+	
+	if(id == 1){
+		dat = readWord(id, 39);
+	}
+
+	else if(id == 2){
+		dat = readWord(id, 39);
+	}
+
+	else if (id == 3){
+		dat = readWord(id + 1, 39);
+	}
+
+	else if (id == 4){
+		dat = readWord(id + 1, 39);
+	}
 	return dat;
 }
 
@@ -522,7 +553,23 @@ void loop(){
 
 word HelloSpoon::getJointTemp(byte id){
 	word dat;
-	dat = readWord(id, 46);
+	
+	if(id == 1){
+		dat = readWord(id, 46);
+	}
+
+	else if(id == 2){
+		dat = readWord(id, 46);
+	}
+
+	else if (id == 3){
+		dat = readWord(id + 1, 46);
+	}
+
+	else if (id == 4){
+		dat = readWord(id + 1, 46);
+	}
+	
 	return dat;
 }
 
@@ -552,7 +599,21 @@ void loop(){
 
 word HelloSpoon::isJointMoving(byte id){
 	word dat;
-	dat = readWord(id, 49);
+	if(id == 1){
+		dat = readWord(id, 49);
+	}
+
+	else if(id == 2){
+		dat = readWord(id, 49);
+	}
+
+	else if (id == 3){
+		dat = readWord(id + 1, 49);
+	}
+
+	else if (id == 4){
+		dat = readWord(id + 1, 49);
+	}
 	return dat;
 }
 

@@ -3,9 +3,10 @@
 HelloSpoon robot;
 
 void setup(){
+  
   robot.begin();
- 
-  robot.LED(1, "green");
+
+  /*Continue with your code here...*/
 }
 
 void loop(){

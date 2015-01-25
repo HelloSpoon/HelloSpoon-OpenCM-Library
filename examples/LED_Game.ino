@@ -3,9 +3,7 @@
 HelloSpoon robot;
 
 void setup(){
-
   robot.begin();
-  
 }
 
 void loop(){

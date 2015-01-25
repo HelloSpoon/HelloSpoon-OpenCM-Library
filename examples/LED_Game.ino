@@ -2,9 +2,6 @@
 
 HelloSpoon robot;
 
-char color[];
-
-
 void setup(){
 
   robot.begin();
@@ -22,6 +19,7 @@ void loop(){
 }
 
 char led_color(int num){
+char color[];
 
   switch(num){
     case 1:

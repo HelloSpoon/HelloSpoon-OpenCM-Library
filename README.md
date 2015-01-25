@@ -1,6 +1,8 @@
 HelloSpoon_OpenCMLib
 ====================
 
+**This Library only works with CM9 IDE v1.0.1 or lower. Version for CM9 IDE v.1.0.2 is ready but needs testing.
+
 Library for OpenCM-9.04 board HelloSpoon version.
 This library is made to facilitate the programming of your HelloSpoon robot.
 
